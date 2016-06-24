@@ -1,0 +1,22 @@
+.auth-forgot(ng-show="vm.isForgot", ng-class="{fadeOut: !vm.isForgot}").animated.fadeInUp
+
+  .section-container
+
+    .section-header(layout='row', layout-align='space-between')
+      span Forgot Password
+      .hc-button.hc-green.hc-inverted.hc-reset-button(ng-click='vm.showSignInDialog()') Sign In
+
+    form.form-horizontal(name='authForgotForm', novalidate='', ng-submit='authForgotForm.$valid && vm.formForgot(authForgotForm)')
+      .section-content
+        .row
+          .form-body.col-md-offset-1.col-md-10.col-xs-offset-1.col-xs-10
+
+            .form-group
+              .instructional-text(ng-if='!vm.forgotEmailSent') Enter your e-mail address below to reset your password.
+              .instructional-text(ng-if='vm.forgotEmailSent') Please check your email for password reset instructions.
+
+            .hc-form-row(ng-if='!vm.forgotEmailSent')
+              input.hc-form-control(name='email', type='email', placeholder='Email address', ng-model='vm.user.email', required)
+
+      .section-footer(ng-if='true', layout='row', layout-align='end')
+        button.hc-button.hc-green.hc-inverted.hc-reset-button(type='submit') Reset

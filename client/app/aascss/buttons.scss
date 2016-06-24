@@ -1,0 +1,136 @@
+@import 'variables';
+
+.btn.dropdown-toggle,
+.btn-group .btn.dropdown-toggle,
+.btn:hover,
+.btn:disabled,
+.btn[disabled],
+.btn:focus,
+.btn:active,
+.btn.active {
+  outline: none !important;
+  background-image: none !important;
+}
+
+.btn-group.open .dropdown-toggle {
+  box-shadow: none;
+}
+
+.btn {
+  text-transform: capitalize;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 20px;
+  padding: 6px 16px;
+}
+
+button.btn-link, button.btn-link:hover, button.btn-link:focus {
+  color: $state-danger-text;
+  text-decoration: none;
+}
+
+.btn-default {
+  @include box-border;
+}
+
+.btn-default-focus {
+  box-shadow: none;
+  outline: none;
+
+  .form-control {
+    border-color: $dove-grey;
+  }
+}
+
+.btn-secondary {
+  background: none;
+  border: 2px solid $iron;
+  border-radius: 4px;
+  color: $mine-shaft;
+}
+
+.btn-close {
+  background: none;
+  padding: 0;
+  font-size: 30px;
+  font-weight: 100;
+  line-height: 30px;
+
+  &:active {
+    box-shadow: none;
+  }
+}
+
+.btn-danger {
+  background-color: $sunset-orange;
+  border-color: $sunset-orange;
+
+  &:hover, &:focus {
+    background-color: $burnt-sienna;
+    border-color: $burnt-sienna;
+  }
+
+  &.disabled, &.disabled:hover {
+    color: white;
+    background-color: $dove-grey;
+    border-color: $dove-grey;
+  }
+}
+
+.button-add-contributor.icon-circle {
+  font-size: 24px;
+  line-height: 33px;
+  font-weight: 100;
+}
+
+.button-add {
+  @include button-add;
+}
+
+.button-add-square {
+  @include button-add-square(50);
+}
+
+.bootstrap-switch {
+  @include box-border;
+
+  .bootstrap-switch-handle-on.bootstrap-switch-primary,
+  .bootstrap-switch-handle-off.bootstrap-switch-primary {
+    color: inherit;
+    background-color: white;
+    line-height: 18px;
+  }
+
+  .bootstrap-switch-handle-on.bootstrap-switch-default,
+  .bootstrap-switch-handle-off.bootstrap-switch-default {
+    background-color: white;
+    line-height: 18px;
+  }
+
+  &.bootstrap-switch-focused {
+    border-color: $iron;
+    box-shadow: none;
+  }
+
+  .bootstrap-switch-label {
+    line-height: 18px;
+  }
+
+  &.bootstrap-switch-off {
+    .bootstrap-switch-label {
+      background-color: $caper;
+      border-radius: 0;
+    }
+  }
+
+  &.bootstrap-switch-on {
+    .bootstrap-switch-label {
+      background-color: $lima;
+      border-radius: 0;
+    }
+  }
+}
+
+.md-button {
+  text-transform: capitalize;
+}

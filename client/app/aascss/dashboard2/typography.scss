@@ -1,0 +1,36 @@
+.hc-help-text {
+  color: $instructional-font-color;
+  font-size: 13px;
+  line-height: 1.5;
+
+  &.hc-green {
+    color: $green;
+  }
+}
+
+.hc-title-text {
+  font-size: 26px;
+  font-weight: bold;
+}
+
+.hc-link {
+  color: $green;
+  text-decoration: underline;
+  font-size: 13px;
+  font-weight: 300;
+  cursor: pointer;
+
+  &:hover {
+    color: $green;
+  }
+}
+
+.hc-success-text {
+  color: $green;
+}
+
+.hc-text-ellipsis {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}

@@ -1,0 +1,29 @@
+.new-dashboard {
+  position: relative;
+  height: 100vh;
+  overflow: hidden;
+
+  .dashboard-header {
+    background-color: $dark-grey;
+    height: $header-height;
+    color: $extra-light-grey;
+    padding-left: 40px;
+    padding-right: 10px;
+
+    .go-back {
+      cursor: pointer;
+      margin-right: 40px;
+    }
+  }
+
+  .dashboard-content {
+    & > * {
+      overflow-y: auto;
+    }
+  }
+
+  .content-col {
+    width: $content-width;
+    margin: 0 auto;
+  }
+}

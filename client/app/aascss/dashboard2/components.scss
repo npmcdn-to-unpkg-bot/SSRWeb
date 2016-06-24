@@ -1,0 +1,517 @@
+md-icon {
+  color: inherit;
+  width: 14px;
+  height: 14px;
+  min-width: 14px;
+  min-height: 14px;
+  font-size: 14px;
+  text-align: center;
+
+  @each $color in red, orange, green, purple, blue {
+    &.hc-#{$color} {
+      color: map_get($hc-colors, $color);
+    }
+  }
+
+  @each $size in 14, 16, 20, 24, 28, 30, 40, 52 {
+    &.hc-#{$size} {
+      width: #{$size}px;
+      height: #{$size}px;
+      font-size: #{$size}px;
+      line-height: #{$size}px;
+      min-width: #{$size}px;
+      min-height: #{$size}px;
+    }
+  }
+}
+
+.md-fab {
+  md-icon {
+    width: auto;
+    height: auto;
+  }
+}
+
+.tooltip {
+  font-family: 'Poppins', sans-serif;
+  text-transform: capitalize;
+}
+
+//=============== Warning message ===============//
+
+.warning-msg {
+  min-height: 40px;
+  border: 1px dashed;
+  border-radius: 7px;
+  font-size: 12px;
+
+  .text {
+    padding: 5px 15px 5px;
+  }
+
+  .icon {
+    min-width: 50px;
+    margin: -1px;
+    border-radius: 7px 0 0 7px;
+
+    md-icon {
+      opacity: .8;
+    }
+  }
+
+  @each $color in red, orange, green {
+    $colorCode: map_get($hc-colors, $color);
+
+    &.hc-#{$color} {
+      color: $colorCode;
+      background-color: rgba($colorCode, .2);
+      border-color: $colorCode;
+
+      .icon {
+        background-color: $colorCode;
+        color: white;
+      }
+    }
+  }
+
+  &.stick-top {
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+
+    .icon {
+      border-top-left-radius: 0;
+      border-top-right-radius: 0;
+    }
+  }
+}
+
+.new-dashboard {
+  a {
+    color: inherit;
+  }
+
+  ul {
+    padding: 0;
+    list-style: none;
+    margin: 0;
+  }
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 0;
+  font-weight: normal;
+}
+
+//=============== Search ===============//
+
+.hc-search-panel {
+  font-weight: 300;
+
+  input {
+    border: none;
+    background: none;
+    line-height: 20px;
+  }
+
+  button {
+    background: none;
+    border: none;
+    margin-right: 5px;
+  }
+
+  md-icon {
+    margin-right: 5px;
+    cursor: pointer;
+  }
+}
+
+//=============== Page controls ===============//
+
+.page-controls-wrapper {
+  padding-top: 65px;
+  position: relative;
+
+  .close-btn {
+    position: absolute;
+    right: 15px;
+    top: 15px;
+    color: $instructional-font-color;
+  }
+
+  .controls-header {
+    text-align: center;
+    padding-bottom: 60px;
+    position: relative;
+
+    &:after {
+      position: absolute;
+      bottom: -17px;
+      left: 50%;
+      transform: translateX(-50%);
+      display: inline-block;
+      border-right: 19px solid transparent;
+      border-top: 17px solid $background-grey;
+      border-left: 19px solid transparent;
+      content: ' ';
+      z-index: 100;
+    }
+
+    .title {
+      font-weight: bold;
+      font-size: 36px;
+    }
+
+    .hc-help-text {
+      font-weight: 300;
+      line-height: 1.5;
+    }
+  }
+}
+
+.page-controls {
+  padding: 60px 60px 0;
+  background-color: $extra-light-grey;
+
+  .choice {
+    border: 1px solid;
+    border-radius: 5px;
+    color: white;
+    min-width: 220px;
+    height: 240px;
+    overflow: hidden;
+    position: relative;
+    margin-right: 20px;
+    text-align: center;
+    padding: 15px;
+
+    &:last-child {
+      margin-right: 0;
+    }
+
+    .title {
+      font-size: 20px;
+      font-weight: 500;
+      text-overflow: ellipsis;
+      overflow: hidden;
+      white-space: nowrap;
+    }
+
+    .desc {
+      max-width: 235px;
+      margin: 0 auto;
+    }
+
+    .icon {
+      margin-bottom: 20px;
+      transition: all .3s;
+      height: 46px;
+
+      md-icon {
+        transition: all .3s;
+      }
+    }
+
+    .info {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 165px;
+      background-color: white;
+      color: $font-color;
+      overflow: hidden;
+      transition: height .3s;
+
+      .info-body {
+        padding: 0 15px 0;
+      }
+
+      .info-footer {
+        background-color: $background-grey;
+        font-size: 10px;
+        font-weight: 300;
+        padding: 10px;
+
+        md-icon {
+          margin-right: 10px;
+        }
+      }
+    }
+
+    &:hover {
+      cursor: pointer;
+
+      .icon {
+        height: 120px;
+
+        md-icon {
+          font-size: 68px;
+          width: 68px;
+          height: 68px;
+        }
+      }
+
+      .info {
+        height: 0 !important;
+      }
+    }
+
+    @each $color in green, purple, blue {
+      &.hc-#{$color} {
+        background-color: map_get($hc-colors, $color);
+        border-color: map_get($hc-colors, $color);
+      }
+    }
+  }
+}
+
+//=============== Info banner ===============//
+
+.hc-info-banner {
+  border: 1px solid $blue;
+  border-radius: $hc-border-radius;
+  margin-bottom: 50px;
+  //width: 675px;
+
+  &.enabled, &.disabled {
+    margin-bottom: 25px;
+  }
+
+  &.enabled {
+    &:hover {
+      border-color: $light-grey;
+
+      .banner-header {
+        background-color: $light-grey;
+
+        md-icon {
+          visibility: hidden;
+        }
+      }
+    }
+  }
+
+  &.disabled {
+    border-color: $light-grey;
+
+    .banner-header {
+      background-color: $light-grey;
+
+      md-icon {
+        visibility: hidden;
+      }
+    }
+
+    &:hover {
+      border-color: $blue;
+
+      .banner-header {
+        background-color: $blue;
+
+        md-icon {
+          visibility: visible;
+        }
+      }
+    }
+  }
+
+  &.inactive {
+    .banner-header {
+      cursor: default;
+    }
+  }
+
+  .banner-header {
+    height: 40px;
+    color: white;
+    background-color: $blue;
+    text-align: center;
+    font-size: 13px;
+    font-weight: 500;
+    transition: all .3s;
+
+    md-icon {
+      margin-left: 15px;
+    }
+  }
+
+  .banner-body {
+    padding: 30px 40px 0;
+  }
+
+  .phone-wrapper {
+    min-height: 474px;
+  }
+
+  .img-container {
+    width: 237px;
+    height: 165px;
+    overflow: hidden;
+    position: relative;
+
+    .phone-img {
+      width: 100%;
+      position: relative;
+    }
+
+    .inside-img {
+      position: absolute;
+      left: 12px;
+      width: 213px;
+
+      &.stick-top {
+        bottom: 55px;
+      }
+
+      &.stick-bottom {
+        bottom: 0;
+      }
+    }
+  }
+
+  .play-btn {
+    position: absolute;
+    background-color: $blue;
+    color: white;
+    cursor: pointer;
+    width: 213px;
+    height: 114px;
+    left: 12px;
+    bottom: 0;
+
+    .hc-button {
+      border-color: white;
+
+      &:hover {
+        background-color: white;
+        color: $blue;
+      }
+    }
+  }
+
+  .info-btn-wrapper {
+    width: 240px;
+    text-align: center;
+    margin-top: 25px;
+  }
+
+  .info-title {
+    font-size: 20px
+  }
+
+  .info-msg {
+    span {
+      font-weight: 600;
+    }
+  }
+
+  .info-tip {
+    font-size: 11px;
+    margin-top: 10px;
+  }
+}
+
+//=============== Dropdown ===============//
+
+$triangle-size: 22px;
+
+.dropdown-toggle {
+  cursor: pointer;
+
+  &:hover {
+    text-decoration: none;
+  }
+}
+
+.hc-dropdown {
+  .dropdown-menu {
+    padding: 30px 0 30px;
+    top: 60px;
+    left: auto;
+    right: -31px;
+    color: $font-color;
+    z-index: 1500;
+
+    .triangle {
+      width: $triangle-size * 2;
+      height: $triangle-size;
+      position: absolute;
+      overflow: hidden;
+      top: -$triangle-size;
+      right: 16px;
+    }
+
+    .triangle::after {
+      content: '';
+      position: absolute;
+      width: $triangle-size * 2;
+      height: $triangle-size * 2;
+      background: white;
+      transform: rotate(45deg);
+      right: 0;
+      top: 15px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    }
+
+    &.share-love {
+      padding: 15px;
+      min-width: 300px;
+
+      .hc-help-text {
+        margin: 20px 0 30px;
+      }
+
+      .form-group, .help-block {
+        margin-bottom: 0;
+      }
+
+      .form-group {
+        margin-bottom: 10px;
+      }
+
+      a {
+        display: block;
+        margin-top: 5px;
+        text-decoration: underline;
+        font-style: italic;
+      }
+    }
+
+    &.take-over {
+      padding: 15px;
+      min-width: 300px;
+
+      .form-group {
+        margin: 20px 0 30px;
+      }
+    }
+  }
+}
+
+//=============== Minicolors ===============//
+
+.minicolors {
+  .minicolors-swatch {
+    border: none;
+    width: 26px;
+    height: 26px;
+  }
+}
+
+//=============== Placeholders ===============//
+
+&::-webkit-input-placeholder {
+  font-size: 13px;
+}
+
+&::-moz-placeholder {
+  font-size: 13px;
+}
+
+&:-ms-input-placeholder {
+  font-size: 13px;
+}
+
+input:-webkit-autofill {
+  -webkit-box-shadow: inset 0 0 0 50px $extra-light-grey !important;
+}

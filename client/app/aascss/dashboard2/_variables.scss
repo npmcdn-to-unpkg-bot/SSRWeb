@@ -1,0 +1,39 @@
+$purple: #9b5db5;
+$green: #29bb9c;
+$blue: #3597D8;
+$red: #fc5349;
+$orange: #f5a623;
+$extra-dark-grey: #383d44;
+$dark-grey: #464D56;
+$light-grey: #c7c9cc;
+$extra-light-grey: #ecedee;
+$black: #000000;
+
+$font-color: #656565;
+$instructional-font-color: #b2b2b2;
+
+$background-grey: #f9f9f9;
+
+$header-height: 80px;
+$content-width: 1200px;
+
+$hc-control-height: 32px;
+$hc-border-radius: 5px;
+
+$hc-colors: (green: $green, purple: $purple, blue: $blue, red: $red, orange: $orange);
+$hc-navbar-colors: $blue, $green, $purple;
+
+@mixin hc-form-control {
+  width: 100%;
+  height: $hc-control-height;
+  border: 1px solid $light-grey;
+  border-radius: 3px;
+  padding-left: 15px;
+  margin-bottom: 5px;
+  font-size: 13px;
+  line-height: normal;
+
+  &:focus {
+    border-color: $dark-grey;
+  }
+}

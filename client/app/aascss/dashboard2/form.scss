@@ -1,0 +1,240 @@
+.hc-form {
+  md-switch {
+    margin: 0;
+    height: 34px;
+  }
+
+  md-radio-button {
+    margin: 25px 0 20px;
+    position: relative;
+
+    .md-container {
+      position: absolute;
+      width: 20px;
+    }
+
+    .md-label {
+      margin-left: 30px;
+    }
+
+    &.md-align-top-left > .md-container {
+      top: 2px;
+    }
+  }
+
+  field-errors {
+    color: $red;
+    font-size: 13px;
+  }
+}
+
+.hc-form-row {
+  margin-bottom: 17px;
+  min-height: 37px;
+
+  &.hc-form-tip {
+    min-height: 0;
+    margin-bottom: 13px;
+  }
+}
+
+.hc-control-label {
+  text-align: right;
+  padding-top: 7px;
+  padding-right: 25px;
+  width: 215px;
+}
+
+.hc-md-label {
+  padding-top: 30px;
+}
+
+.hc-icon-control, .input-icon {
+  .fa-user, .fa-envelope {
+    color: $blue;
+  }
+
+  .fa-globe, .fa-building-o {
+    color: $green;
+  }
+}
+
+.hc-icon-control {
+  position: relative;
+
+  &.icon-right {
+    .hc-form-control {
+      padding-left: 15px;
+    }
+  }
+
+  & > md-icon {
+    position: absolute;
+    top: 9px;
+    left: 9px;
+    font-size: 14px;
+
+    &.social-icon {
+      width: 28px;
+      height: 28px;
+      left: auto;
+      right: 2px;
+      top: 2px;
+    }
+  }
+
+  .hc-form-control {
+    padding-left: 40px;
+  }
+}
+
+.hc-btn-control {
+  margin-bottom: 5px;
+
+  & > .hc-form-control {
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+    background: none;
+    margin: 0 -1px 0 0;
+  }
+
+  @each $color in orange, green, purple {
+    &.hc-#{$color} {
+      & > button {
+        background-color: map_get($hc-colors, $color);
+      }
+
+      & > progress-button {
+        .progress-button {
+          background-color: map_get($hc-colors, $color);
+          border-color: map_get($hc-colors, $color);
+        }
+
+        .progress-bar {
+          background-color: darken(map_get($hc-colors, $color), 20%);
+        }
+      }
+    }
+  }
+
+  & > button {
+    height: 32px;
+    border: none;
+    border-radius: 0 3px 3px 0;
+    color: white;
+    padding: 0 16px;
+    font-size: 12px;
+    font-weight: 500;
+    min-width: 100px;
+
+    &[disabled] {
+      background-color: $light-grey;
+      cursor: not-allowed;
+    }
+  }
+
+  & > progress-button {
+    .progress-button {
+      border-radius: 0 5px 5px 0;
+    }
+
+    .content {
+      line-height: 30px;
+    }
+  }
+}
+
+.hc-info-text-control {
+  position: relative;
+
+  .hc-form-control {
+    padding-right: 80px;
+  }
+
+  label {
+    margin: 0;
+  }
+
+  .info-text {
+    position: absolute;
+    right: 10px;
+    top: 0;
+    height: 32px;
+    width: 75px;
+  }
+}
+
+.hc-form-control {
+  @include hc-form-control;
+}
+
+.hc-inline-controls {
+  & > * {
+    &:not(:last-child) {
+      margin-right: 10px;
+    }
+  }
+}
+
+textarea.hc-form-control {
+  height: auto;
+  padding-top: 10px;
+}
+
+.hc-avatar {
+  position: relative;
+  color: $instructional-font-color;
+  width: 90px;
+  height: 90px;
+
+  label {
+    cursor: pointer;
+  }
+
+  .avatar-placeholder {
+    border: 1px solid $light-grey;
+    border-radius: 50%;
+  }
+
+  .img-container {
+    border-radius: 50%;
+    overflow: hidden;
+
+    img {
+      width: 100%;
+    }
+  }
+
+  &:hover {
+    .remove-btn {
+      display: block;
+    }
+  }
+
+  .remove-btn {
+    display: none;
+    position: absolute;
+    top: 8px;
+    right: 11px;
+    color: white;
+    text-shadow: 0 0 1px black;
+
+    &:hover {
+      color: $light-grey
+    }
+  }
+}
+
+.ng-submitted {
+  .ng-invalid {
+    border-color: $red;
+
+    .form-control {
+      border-color: $red;
+    }
+  }
+}
+
+.ng-invalid.ng-touched {
+  border-color: $red;
+}

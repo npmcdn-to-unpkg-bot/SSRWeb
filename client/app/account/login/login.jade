@@ -1,0 +1,43 @@
+.auth-page
+  .auth-wrapper
+    .ssr-logo-image
+      img(src='/assets/app_logo.png')
+
+    .top-right-container(layout-align='space-between center')
+      .hc-sign-link(ng-if='vm.user.role === "parent"', ng-click='vm.goSignupPage()') SIGN UP
+      .date-time {{ vm.date | date : 'MMMM dd, yyyy hh:mm a' }}
+
+    .auth-login(ng-show="!vm.isForgot", ng-class="{fadeOut: true}").animated.fadeInUp
+      .section-container
+        form.hc-form(
+        name='authLoginForm',
+        ng-submit='authLoginForm.$valid && vm.formLogin(authLoginForm)',
+        novalidate=''
+        )
+          .section-content
+            .welcome-label(ng-if='vm.user.role === "admin"') WELCOME TO THE SYSTEM<br/>ADMINISTRATION
+            .welcome-label(ng-if='vm.user.role === "parent"') WELCOME PARENTS & GUARDIANS
+
+            .hc-form-row
+              input.hc-form-control(name='email', type='email', placeholder='Email', ng-model='vm.user.email', required)
+
+              field-errors(form='authLoginForm', field-name='email')
+
+            .hc-form-row
+              input.hc-form-control(name='password', type='password', placeholder='Password', ng-model='vm.user.password', required)
+
+              field-errors(form='authLoginForm', field-name='password')
+
+            .hc-login-bottom-content(layout='row')
+              button.hc-button.hc-green.hc-inverted.hc-reset-button(type='submit') Login
+
+              .hc-forgot-content
+                .hc-forgot(layout='row')
+                  .hc-label Forgot my&nbsp;
+                  .hc-forgot-link(ng-click='vm.showForgotPasswordDialog()') Username or Password
+
+                .hc-remember(layout='row')
+                  input(name='remember', id='remember', type='checkbox', ng-model='vm.user.remember')
+                  label(for="remember").instructional-text &nbsp;Keep me updated on new features
+
+    include forgot

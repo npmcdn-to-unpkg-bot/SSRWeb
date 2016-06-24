@@ -1,0 +1,44 @@
+$icon-font-path: "../bower_components/bootstrap-sass-official/vendor/assets/fonts/bootstrap/";
+@import '../bower_components/bootstrap-sass-official/vendor/assets/stylesheets/bootstrap';
+$fa-font-path: "../bower_components/font-awesome/fonts";
+@import '../bower_components/font-awesome/scss/font-awesome';
+
+/**
+ * App-wide Styles
+ */
+
+.browserupgrade {
+  margin: 0.2em 0;
+  background: #ccc;
+  color: #000;
+  padding: 0.2em 0;
+}
+
+// Component styles are injected through grunt
+/* inject:scss */
+@import 'aascss/animation';
+@import 'aascss/buttons';
+@import 'aascss/checkboxes';
+@import 'aascss/components';
+@import 'aascss/dashboard2/variables';
+@import 'aascss/dashboard2/buttons';
+@import 'aascss/dashboard2/components';
+@import 'aascss/dashboard2/form';
+@import 'aascss/dashboard2/formWidgets';
+@import 'aascss/dashboard2/list';
+@import 'aascss/dashboard2/styles';
+@import 'aascss/dashboard2/typography';
+@import 'aascss/fileUpload';
+@import 'aascss/form';
+@import 'aascss/materialComponents';
+@import 'aascss/modal';
+@import 'aascss/newModal';
+@import 'aascss/uiSelect';
+@import 'aascss/variables';
+@import 'account/login/styles';
+@import 'account/signup/styles';
+@import 'admin/admin';
+@import 'main/main';
+@import '../components/footer/footer';
+@import '../components/modal/modal';
+/* endinject */

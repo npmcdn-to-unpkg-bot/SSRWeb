@@ -1,0 +1,298 @@
+@import 'variables';
+
+$listIconHeight: 40px;
+
+@each $size in 10, 12, 16, 20, 24, 32, 40, 48, 64, 88 {
+  .md-#{$size} {
+    width: #{$size}px;
+    height: #{$size}px;
+    font-size: #{$size}px;
+    min-width: #{$size}px;
+    min-height: #{$size}px;
+  }
+}
+
+md-icon[md-font-icon='icon-reorder'] {
+  cursor: all-scroll;
+}
+
+md-content {
+  &.section-content {
+    background: none;
+  }
+
+  md-list {
+    margin: 0 -20px;
+  }
+}
+
+.md-avatar {
+  height: $listIconHeight;
+  margin-top: 8px;
+  margin-bottom: 8px;
+  box-sizing: content-box;
+  overflow: hidden;
+  position: relative;
+
+  &.circle {
+    width: $listIconHeight;
+    border-radius: 50%;
+  }
+
+  &.rect {
+    width: $listIconHeight * 1.875 !important;
+    border-radius: 0 !important;
+  }
+
+  .placeholder {
+    width: $listIconHeight;
+    line-height: $listIconHeight - 4px;
+    text-align: center;
+    font-size: $listIconHeight / 2.5;
+    text-transform: uppercase;
+    border-radius: 50%;
+    border: 2px solid $mdHue1;
+  }
+
+  img {
+    height: $listIconHeight;
+  }
+}
+
+md-list {
+  .list-header {
+    text-transform: uppercase;
+    font-weight: 500;
+    font-size: 10px;
+    cursor: pointer;
+
+    md-icon {
+      width: 12px;
+      height: 12px;
+      margin-left: 10px;
+    }
+  }
+
+  .controls {
+    height: 50px;
+  }
+
+  md-list-item, ._md-list-item-inner {
+    md-checkbox {
+      margin-bottom: 0;
+    }
+
+    .md-list-item-text > p {
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+
+    &.md-2-line > ._md-no-style .md-list-item-text p,
+    &.md-2-line.md-no-proxy .md-list-item-text p {
+      font-weight: 400;
+      color: $font-color;
+
+      &:last-child {
+        font-size: 13px;
+      }
+    }
+
+    .md-avatar {
+      margin-right: 29px;
+    }
+
+    .fa-ellipsis-v {
+      visibility: hidden;
+      cursor: pointer;
+    }
+
+    ._md-secondary-container {
+      md-icon-button {
+        margin: 0;
+      }
+
+      // inline title edit button
+      label {
+        visibility: hidden;
+      }
+    }
+
+    .controls {
+      //padding-right: 50px;
+      visibility: hidden;
+
+      md-icon {
+        margin: 0 5px;
+
+        &:hover {
+          color: $green;
+        }
+      }
+    }
+
+    //.md-icon-button {
+    //  visibility: hidden;
+    //
+    //  &:hover {
+    //    md-icon {
+    //      color: $green;
+    //    }
+    //  }
+    //}
+
+    &:hover {
+      &:not(.list-header) {
+        background-color: $mdHue3;
+      }
+
+      .controls, .fa-ellipsis-v, .md-icon-button {
+        visibility: visible;
+      }
+    }
+
+    ._md-secondary-container {
+      label {
+        visibility: visible;
+      }
+    }
+
+    & > button.md-button:not([disabled]):hover {
+      background-color: $mdHue3;
+    }
+  }
+
+  md-list-item {
+    &.drag-enter {
+      .drop-place {
+        height: 40px;
+        border: 1px dashed $light-grey;
+      }
+    }
+
+    &[ng-drag] {
+      &.dragging {
+        position: absolute;
+        width: 100%;
+        border: 1px solid $light-grey;
+        background-color: white;
+
+        ._md-list-item-inner {
+          background-color: white;
+        }
+
+        .right-controls {
+          display: none;
+        }
+
+        .drop-place {
+          display: none;
+        }
+      }
+    }
+
+    .drop-place {
+      height: 0;
+      transition: height .1s;
+    }
+  }
+}
+
+.form-divider {
+  margin-bottom: 15px;
+}
+
+.input-group-btn {
+  md-icon {
+    width: auto;
+    height: auto;
+  }
+}
+
+.timepicker {
+  min-width: 60px;
+
+  input {
+    border: none;
+    box-shadow: none;
+  }
+
+  td {
+    min-width: 20px;
+    text-align: center;
+  }
+}
+
+input.inline-edit {
+  border: none;
+  background: none;
+
+  &:not([readonly]) {
+    border-bottom: 1px dashed $foreground1;
+  }
+}
+
+.disable-pointer-events {
+  pointer-events: none;
+}
+
+.section-header {
+  navbar {
+    display: inline-block;
+
+    .nav-tabs {
+      margin: 0;
+
+      & > li {
+        margin: 0 15px;
+
+        & > a {
+          line-height: 1;
+        }
+      }
+    }
+  }
+}
+
+.section-content {
+  .page-placeholder {
+    height: auto;
+  }
+}
+
+.md-dialog-is-showing {
+  .pulse-button {
+    animation: none;
+  }
+}
+
+.pulse-button {
+  animation: pulse 1.25s infinite cubic-bezier(0.66, 0, 0, 1);
+
+  &.md-button.md-fab {
+    box-shadow: 0 0 0 0 $green;
+
+    &:hover {
+      box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
+      animation: none;
+    }
+  }
+}
+
+.intl-tel-input .country-list {
+  z-index: 20;
+}
+
+.timepicker-group {
+  input[readonly] {
+    background: none;
+  }
+}
+
+//.breadcrumbs {
+//  &, a {
+//    font-size: 16px;
+//    color: $instructional-font-color;
+//    text-decoration: none;
+//  }
+//}

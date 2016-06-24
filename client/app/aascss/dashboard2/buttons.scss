@@ -1,0 +1,102 @@
+//=============== Control buttons ===============//
+
+// @todo remove, replace with directive
+
+.control-btn {
+  height: 30px;
+  //margin-right: 5px;
+  border: 1px solid $light-grey;
+  border-radius: 3px;
+  cursor: pointer;
+  font-size: 11px;
+  font-weight: 600;
+  background-color: white;
+
+  &:hover {
+    max-width: 120px;
+
+    .text {
+      max-width: 100px;
+      padding-right: 8px;
+    }
+  }
+
+  .btn-icon {
+    text-align: center;
+    font-size: 14px;
+
+    md-icon {
+      width: 28px;
+    }
+  }
+
+  .text {
+    white-space: nowrap;
+    max-width: 0;
+    overflow: hidden;
+    transition-property: max-width, padding;
+    transition-delay: .1s;
+    transition-duration: .5s;
+    padding-top: 3px;
+  }
+
+  @each $color in blue, green, purple {
+    &.hc-#{$color} {
+      color: map_get($hc-colors, $color);
+
+      &:hover {
+        background-color: map_get($hc-colors, $color);
+        border-color: map_get($hc-colors, $color);
+        color: white;
+      }
+    }
+  }
+}
+
+//=============== Buttons ===============//
+
+.hc-button {
+  height: $hc-control-height;
+  padding: 0 20px;
+  transition: all .3s;
+  border-radius: $hc-control-height / 2;
+  border: 1px solid;
+  cursor: pointer;
+  font-size: 12px;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  @each $color in green, purple, blue, red {
+    &.hc-#{$color} {
+      background-color: map_get($hc-colors, $color);
+      color: white;
+      border-color: map_get($hc-colors, $color);
+
+      &:hover {
+        color: map_get($hc-colors, $color);
+        background-color: transparent;
+      }
+
+      &.hc-inverted {
+        color: map_get($hc-colors, $color);
+        background-color: transparent;
+
+        &:hover {
+          color: white;
+          background-color: map_get($hc-colors, $color);
+        }
+      }
+    }
+  }
+
+  @each $size in 40 {
+    &.hc-#{$size} {
+      height: $size + px;
+      border-radius: $size / 2 + px;
+      font-size: 14px;
+      padding: 0 25px;
+    }
+  }
+}

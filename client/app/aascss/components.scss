@@ -1,0 +1,525 @@
+@import 'variables';
+
+a {
+  //color: $sunset-orange;
+  //cursor: pointer;
+  color: inherit;
+
+  &:hover {
+    //color: $crail;
+    color: inherit;
+  }
+
+  &.alternative-text {
+    color: $sunset-orange;
+
+    &:hover {
+      color: $crail;
+    }
+  }
+}
+
+/* google maps dropdown */
+.pac-container {
+  z-index: 5000 !important;
+}
+
+.inline-block {
+  display: inline-block;
+}
+
+//.tooltip {
+//  text-transform: capitalize;
+//}
+
+.subheader {
+  font-style: italic;
+  font-size: 16px;
+  line-height: 19px;
+  color: $scorpion;
+}
+
+.icon-circle {
+  img {
+    height: 100%;
+    vertical-align: baseline;
+  }
+
+  &.icon-circle-primary {
+    background-color: $iron;
+    color: $ebony-clay;
+    border-color: $iron;
+  }
+
+  &.icon-circle-default {
+    background: none;
+    color: $shuttle-gray;
+    border-color: $shuttle-gray;
+  }
+
+  border-radius: 50%;
+  width: 35px;
+  height: 35px;
+  display: inline-block;
+  vertical-align: middle;
+  line-height: 35px;
+  padding: 0;
+  text-align: center;
+  border: 1px solid;
+  overflow: hidden;
+  text-transform: uppercase;
+}
+
+.social-icon {
+  font-family: 'web-app';
+  display: inline-block !important;
+  border-radius: 2px;
+  font-style: normal;
+
+  &.social-icon-color {
+    background-position: 0 -38px !important;
+  }
+
+  &.facebook {
+    background: $facebook-blue;
+    &:before {
+      line-height: 28px;
+      color: $seashell;
+      content: 'p';
+    }
+  }
+
+  &.googleplus {
+    background: $googleplus-red;
+    &:before {
+      line-height: 28px;
+      color: $seashell;
+      content: 'o';
+    }
+  }
+
+  &.twitter {
+    background: $twitter-blue;
+    &:before {
+      line-height: 28px;
+      color: $seashell;
+      content: 'n';
+    }
+  }
+
+  &.linkedin {
+    background: $linkedin-blue;
+    &:before {
+      line-height: 28px;
+      color: $seashell;
+      content: 'm';
+    }
+  }
+}
+
+.instructional-text {
+  color: $instructional-font-color;
+  font-size: 13px;
+  line-height: 1.5;
+  //@include instructional-text;
+}
+
+.instructional-text-link {
+  @include instructional-text($sunset-orange);
+}
+
+.alternative-text {
+  @include alternative-text;
+}
+
+.box-bordered {
+  @include box-border;
+}
+
+.content-table {
+  .controls .fa {
+    visibility: hidden;
+  }
+
+  .select-col {
+    padding-left: 20px;
+  }
+
+  tr {
+    &:hover {
+      .controls .fa {
+        visibility: visible;
+
+        &:hover {
+          color: $sunset-orange;
+        }
+      }
+    }
+  }
+
+  .check-col {
+    text-align: center;
+
+    [type="checkbox"]:checked + label:before {
+      border-color: $sunset-orange;
+    }
+
+    label {
+      vertical-align: 12px;
+
+      &:before {
+        border: 2px solid black;
+      }
+    }
+  }
+}
+
+.pagination {
+  margin: 0;
+  font-size: 12px;
+
+  .active {
+    a {
+      &, &:hover, &:focus {
+        background-color: $gallery;
+        border-color: $iron;
+        color: $mine-shaft;
+      }
+    }
+  }
+
+  & > li {
+    & > a {
+      margin: 0 5px;
+      color: $mine-shaft;
+      font-weight: 500;
+      @include box-border;
+    }
+  }
+}
+
+.page-subheader {
+  background-color: $dark-grey;
+  padding-bottom: 65px;
+  color: $instructional-font-color;
+}
+
+.container {
+  width: 980px;
+  position: relative;
+  padding: 0;
+}
+
+.section-wrapper {
+  margin-top: -67px;
+}
+
+.section-container {
+  position: relative;
+  border-radius: 3px;
+  background-color: white;
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16);
+  margin-bottom: 25px;
+
+  & > .drop-over {
+    min-height: 500px;
+  }
+
+  .section-header {
+    margin: 0;
+    padding: 20px 20px 10px;
+    border-bottom: 1px solid $extra-light-grey;
+    font-size: 20px;
+    color: $font-color;
+    line-height: 37px;
+    position: relative;
+
+    .header-buttons {
+      //display: inline-block;
+      margin-left: 10px;
+
+      & > * {
+        margin: 0 8px;
+      }
+
+      .search-form {
+        vertical-align: top;
+        //margin: 0 10px;
+      }
+
+      .dropdown-menu {
+        width: 160px;
+      }
+    }
+
+    .button-add {
+      position: absolute;
+      bottom: -25px;
+      right: 20px;
+      z-index: 100;
+    }
+
+    .md-fab {
+      position: absolute;
+      bottom: -34px;
+      right: 20px;
+      z-index: 1200;
+
+      &.md-mini {
+        right: 10px;
+        bottom: -24px;
+        line-height: 36px;
+        width: 36px;
+        height: 36px;
+
+        md-icon {
+          height: 20px;
+          font-size: 20px;
+        }
+      }
+    }
+
+    //.import-button {
+    //  margin-left: 70px;
+    //}
+  }
+
+  .section-content {
+    padding: 20px;
+    position: relative;
+    min-height: 250px;
+
+    & > md-list, .hc-list {
+      margin: 0 -20px;
+    }
+
+    .content-spinner {
+      position: absolute;
+      width: 100%;
+      top: 0;
+      left: 0;
+    }
+
+    .content-loading {
+      opacity: .3;
+    }
+
+    .alert-container {
+      margin: -20px -20px 20px -20px;
+    }
+
+    // @todo temporary solution for section with nav tabs in header
+    .section-footer {
+      margin: 0 -20px -20px -20px;
+    }
+  }
+
+  .section-footer {
+    height: auto;
+    padding: 20px 0 30px;
+    border-top: 1px solid $gallery;
+  }
+
+  .nav-tabs {
+    border: none;
+    display: inline-block;
+    vertical-align: bottom;
+    font-size: 13px;
+
+    li {
+      margin-left: 60px;
+      cursor: pointer;
+      border-bottom: 3px solid transparent;
+
+      &.active {
+        border-color: $green;
+
+        a {
+          color: $mine-shaft;
+          background: none;
+          border-color: transparent;
+        }
+      }
+    }
+
+    a {
+      padding: 10px 5px;
+      color: $silver;
+      text-transform: uppercase;
+      border-color: transparent;
+
+      &:hover {
+        background: none;
+        border-color: transparent;
+      }
+    }
+  }
+}
+
+.table-container {
+  margin: 0 -20px;
+
+  .table {
+    th {
+      font-weight: 500;
+      font-size: 10px;
+      text-transform: uppercase;
+      border: none;
+      cursor: pointer;
+      line-height: 8px;
+      padding-top: 0;
+
+      .fa {
+        font-size: 12px;
+        color: $iron;
+      }
+    }
+
+    td {
+      border: none;
+      vertical-align: middle;
+      padding-top: 13px;
+      padding-bottom: 13px;
+
+      .icon-circle {
+        background: none;
+        border-width: 2px;
+        margin-right: 25px;
+      }
+
+      .fa {
+        font-size: 16px;
+      }
+    }
+
+    .fa {
+      margin: 0 10px;
+      cursor: pointer;
+    }
+
+    .controls .fa {
+      visibility: hidden;
+    }
+
+    .status {
+      color: $iron;
+    }
+
+    tr {
+      &:hover {
+        .controls .fa {
+          visibility: visible;
+
+          &:hover {
+            color: $sunset-orange;
+          }
+        }
+      }
+    }
+  }
+}
+
+/* bootstrap alert */
+.alert {
+  border-radius: 0;
+  margin-bottom: 0;
+  max-height: 51px;
+  overflow: hidden;
+
+  &.alert-danger {
+    color: $monza;
+  }
+  &.alert-success {
+    color: $mountain-meadow;
+  }
+}
+
+.alert.ng-hide-remove {
+  animation: slideDown 1s;
+  -webkit-animation: slideDown 1s;
+}
+
+.alert.ng-hide-add {
+  animation: slideUp 1s;
+  -webkit-animation: slideUp 1s;
+}
+
+.minicolors-panel {
+  z-index: 1000;
+}
+
+.content-dropdown {
+  text-transform: none;
+
+  .dropdown-menu {
+    top: 97px;
+    right: 2px;
+    width: 300px;
+    border: none;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.25);
+    padding: 25px;
+
+    form {
+      margin-top: 25px;
+    }
+
+    &:before {
+      position: absolute;
+      top: 0;
+      right: 33px;
+      display: inline-block;
+      border: 17px solid white;
+      content: ' ';
+      transform-origin: 0 0;
+      transform: rotate(-45deg);
+      box-shadow: 5px -5px 7px rgba(0, 0, 0, 0.1);
+    }
+  }
+}
+
+a.cancel {
+  position: relative;
+  right: 10px;
+  font-size: 12px;
+}
+
+.document-table {
+  .instructional-text {
+    margin: 20px 0 20px;
+  }
+
+  .table {
+    th:first-child, td:first-child {
+      padding-left: 20px;
+    }
+
+    th:last-child, td:last-child {
+      padding-right: 20px;
+    }
+  }
+
+  .status {
+    color: $iron;
+  }
+}
+
+#loading-bar {
+  .bar {
+    background-color: $blue;
+    height: 4px;
+  }
+
+  .peg {
+    box-shadow: none !important;
+    height: 4px;
+  }
+}
+
+#loading-bar-spinner .spinner-icon {
+  border-color: $sunset-orange;
+}
+
+.alert-dismissible .close {
+  color: $monza;
+  opacity: 0.7;
+}

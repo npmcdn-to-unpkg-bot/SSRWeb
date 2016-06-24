@@ -1,0 +1,54 @@
+.auth-page {
+  .auth-wrapper {
+    .title-bar {
+      width: 400px;
+      background-color: rgba(255, 255, 255, 0.7);
+      text-align: center;
+      border: 2px solid lightgray;
+      color: dimgray;
+      font-size: 14px;
+      padding-top: 5px;
+      padding-bottom: 5px;
+      margin-top: 20px;
+    }
+
+    .auth-signup {
+      .section-container {
+        margin-top: 0px;
+        border: 2px solid lightgray;
+      }
+
+      .hc-input-box {
+        margin-bottom: 10px;
+
+        .hc-inuput-box-left {
+          width: 50vw;
+          margin-right: 10px;
+        }
+        .hc-inuput-box-right {
+          width: 50vw;
+          margin-left: 10px;
+        }
+      }
+
+      .hc-remember {
+        .hc-agree-label {
+          color: dimgray;
+        }
+      }
+
+      .signup-button {
+        width: 120px;
+        color: white;
+        font-size: 16px;
+        font-weight: bold;
+        background-color: dimgray;
+        border: 2px solid darkslategray;
+        -webkit-border-radius: 5px;
+        -moz-border-radius: 5px;
+        border-radius: 5px;
+        margin-top: 10px;
+      }
+    }
+  }
+}

@@ -1,0 +1,58 @@
+include header
+
+div.home(ng-controller='MainController')
+  .container
+    div.map
+      ng-map(center="[{{vm.lat}},{{vm.lon}}]", zoom ='5')
+        marker(position="[{{vm.lat}},{{vm.lon}}]" visible="true")
+
+    div.map-layers(layout='col')
+      .map-type-item(style="text-align:center")
+        p.title MAP LAYERS
+
+      .map-type-item
+        input(name='map-types', id='dropOffLocations', type='radio' value="0" checked)
+        label(for="dropOffLocations").option-text &nbsp;Drop-Off Locations
+
+      .map-type-item
+        input(name='map-types', id='pickUpLocations', type='radio' value="1")
+        label(for="pickUpLocations").option-text &nbsp;Pick-Up Locations
+
+      .map-type-item
+        input(name='map-types', id='weatherMap', type='radio' value="2")
+        label(for="weatherMap").option-text &nbsp;Weather Map
+
+      .map-type-item
+        input(name='map-types', id='incidentReports', type='radio' value="3")
+        label(for="incidentReports").option-text &nbsp;Incident Reports
+
+
+    div.tracking-panel(layout='col')
+      .trackingpanel-title(style="text-align:center")
+        p.title TRACKING PANEL
+
+      div.underline
+
+      div.filter-panel(layout='col')
+        .filter-box
+          p.filter-title FILTER BY ROUTE
+          select.form-control(name='filterRoute', required)
+            option Route 518 | McAllen, TX78532
+            option Route 105 | McAllen, TX55504
+            option Route 235 | McAllen, TX98557
+
+        .filter-box
+          p.filter-title FILTER BY BUS
+          select.form-control(name='filterBus', required)
+            option Bus32 | De Leon Middle School
+            option Bus17 | De Leon High School
+            option Bus45 | De Leon University
+            option(ng-repeat='busObj in vm.buses') {{busObj.title}}
+
+        .filter-box
+          p.filter-title FILTER BY NAME
+          input.ui-search(name='filterName', required)
+
+        .filter-box
+          p.filter-title Bus32 | Route518
+          p {{ vm.date | date : 'MMMM dd, yyyy hh:mm:ss a' }}

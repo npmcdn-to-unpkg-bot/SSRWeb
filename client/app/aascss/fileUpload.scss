@@ -1,0 +1,78 @@
+@import 'variables';
+
+.drop-over {
+  display: none;
+
+  .btn {
+    @include button-add(100px);
+  }
+}
+
+[drag-over] {
+  & > * {
+    pointer-events: none;
+  }
+
+  &:hover > * {
+    pointer-events: auto;
+  }
+}
+
+.file-over {
+  .drop-over {
+    display: flex;
+  }
+
+  & > *:not(.drop-over):not(.disable-drop) {
+    display: none;
+  }
+}
+
+.progress-wrapper {
+  height: 10px;
+  border-radius: 5px;
+  background-color: $alto;
+  overflow: hidden;
+
+  .progressbar {
+    @include base-transition(width, .3s, linear);
+
+    background-color: $sunset-orange;
+    height: 100%;
+  }
+}
+
+.drop-zone {
+  border: 3px dashed $iron;
+  height: 150px;
+  padding: 30px;
+  cursor: pointer;
+
+  md-icon {
+    width: 36px;
+    height: 36px;
+    font-size: 36px;
+    color: $iron;
+  }
+
+  .instructional-text {
+    margin: 0;
+
+    .instructional-text-link {
+      text-transform: none;
+      text-decoration: underline;
+    }
+  }
+}
+
+.upload-progress {
+  .percentage {
+    font-weight: 100;
+    font-size: 36px;
+  }
+
+  .progress-wrapper {
+    width: 150px;
+  }
+}
+

@@ -1,0 +1,55 @@
+.auth-page
+  .auth-wrapper
+    .ssr-logo-image
+      img(src='/assets/app_logo.png')
+
+    .top-right-container(layout-align='space-between center')
+      .hc-sign-link(ng-click='vm.goSignInPage()') LOG IN
+      .date-time {{ vm.date | date : 'MMMM dd, yyyy hh:mm a' }}
+
+    .title-bar Sign Up
+
+    .auth-signup(ng-class="{fadeOut: true}").animated.fadeInUp
+      .section-container
+        form.hc-form(
+        name='authLoginForm',
+        ng-submit='authLoginForm.$valid && vm.register(authLoginForm)',
+        novalidate=''
+        )
+          .section-content
+            .hc-input-box(layout='row')
+              .hc-inuput-box-left
+                label.hc-input-label Username
+                input.hc-form-control(name='text', type='text', placeholder='Username', ng-model='vm.user.name', required)
+              .hc-inuput-box-right
+                label.hc-input-label Email
+                input.hc-form-control(name='email', type='email', placeholder='Email', ng-model='vm.user.email', required)
+
+            .hc-input-box(layout='row')
+              .hc-inuput-box-left
+                label.hc-input-label First Name
+                input.hc-form-control(name='text', type='text', placeholder='First Name', ng-model='vm.user.firstname', required)
+              .hc-inuput-box-right
+                label.hc-input-label Last Name
+                input.hc-form-control(name='text', type='text', placeholder='Last Name', ng-model='vm.user.lastname', required)
+
+            .hc-input-box(layout='row')
+              .hc-inuput-box-left
+                label.hc-input-label Password
+                input.hc-form-control(name='password', type='password', placeholder='Password', ng-model='vm.user.password', required)
+              .hc-inuput-box-right
+                label.hc-input-label Confirm Password
+                input.hc-form-control(name='password', type='password', placeholder='Confirm Password', ng-model='vm.user.confirmpassword', required)
+
+            .hc-login-bottom-content(layout='row')
+              .hc-remember(layout='row')
+                input(name='termsofservice', id='termsofservice', type='checkbox', ng-model='vm.user.termsofserivce', required)
+                label(layout="row", for="termsofservice")
+                  .hc-agree-label &nbsp;I agree to the&nbsp;
+                  .hc-forgot-link(ng-click='') Terms of Service
+
+              .hc-remember(layout='row')
+                input(name='remember', id='remember', type='checkbox', ng-model='vm.user.remember')
+                label(for="remember").instructional-text &nbsp;Keep me updated on new features
+
+            button.hc-button.hc-small.signup-button(type='submit') SIGN UP

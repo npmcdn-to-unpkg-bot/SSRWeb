@@ -1,0 +1,43 @@
+//=============== Date range ===============//
+
+.hc-date-range {
+  border: 1px solid $light-grey;
+  margin-bottom: 5px;
+  border-radius: 3px;
+
+  .form-control {
+    height: $hc-control-height - 2px;
+    border: none;
+    box-shadow: none;
+    margin-bottom: 0;
+  }
+
+  .separator {
+    text-align: center;
+    padding: 5px 12px;
+    background-color: $silver;
+  }
+}
+
+//=============== Timepicker ===============//
+
+.timepicker-group {
+  input[type=text]:read-only {
+    background: none;
+  }
+}
+
+.datetimepicker {
+  .active, .active, span, .day {
+    &:hover, &.active {
+      background: $green !important;
+      color: white;
+    }
+  }
+
+  .disabled, .disabled:hover {
+    background: none !important;
+    color: $instructional-font-color !important;
+    opacity: .5;
+  }
+}
